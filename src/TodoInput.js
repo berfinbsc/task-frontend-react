@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 export default class TodoInput extends Component {
   render() {
+
+//gelen props->item değerine atar
+const {item}=this.props;
+
+
     return (
       <div className='card card-body my-3'>
 
@@ -18,7 +23,9 @@ w
 
     <input type='text'
      className='form-control text-catalizepi' 
-     placeholder='add a to do item'/>
+     placeholder='add a to do item'
+     value={item}
+     />
 
 
   </div>

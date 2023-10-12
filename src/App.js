@@ -1,17 +1,28 @@
 import './App.css';
 import TodoInput from './TodoInput';
-
+import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import uuid from 'uuid';
+//import uuid from 'uuid';
+
 import TodoList from './TodoList';
 function App() {
+
+  const [item,setItem] =useState("he");
+  const [items=[],setItems] =useState("he");
+
+
+
   return (
     <div className="container">
       <div className='row'>
         <div className='col-10 mx-auto col-md-8 mt-4'>
      <h3 className='text-capitalize text-center'> To Do Input</h3>
-        <TodoInput/>
-<TodoList/>
+        <TodoInput
+        item={item}
+        />
+<TodoList
+items={items}
+/>
         </div>
   
       </div>
