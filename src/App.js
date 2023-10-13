@@ -7,9 +7,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import TodoList from './TodoList';
 function App() {
 
-  const [item,setItem] =useState("he");
-  const [items=[],setItems] =useState("he");
 
+
+  const [item,setItem] =useState("");
+  const [items,setItems] =useState([]);
+
+const handleChange=(e)=>{
+  setItem(e.target.value)
+}
+
+const handleSubmit=(e)=>{
+
+  e.preventDefault();
+  const newitem=item
+const updateItems=[...items,newitem];
+setItems(updateItems);
+
+}
 
 
   return (
@@ -19,7 +33,11 @@ function App() {
      <h3 className='text-capitalize text-center'> To Do Input</h3>
         <TodoInput
         item={item}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
         />
+
+        
 <TodoList
 items={items}
 />

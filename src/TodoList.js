@@ -11,12 +11,10 @@ export default class TodoList extends Component {
 
 {
   items.map(item=>{
-    return(
-     <TodoItem
-      key={item.id}
-      title={item.title}
+    return( <TodoItem
+      item={item}
       
-      />)
+      />);
 
   }) 
 }

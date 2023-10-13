@@ -3,13 +3,12 @@ export default class TodoInput extends Component {
   render() {
 
 //gelen props->item değerine atar
-const {item}=this.props;
-
+const {item,handleChange,handleSubmit}=this.props;
 
     return (
       <div className='card card-body my-3'>
 
-<form>
+<form onSubmit={handleSubmit}>
   <div className='input-group' >
     
     <div className='input-group-prepend'>
@@ -25,6 +24,7 @@ w
      className='form-control text-catalizepi' 
      placeholder='add a to do item'
      value={item}
+     onChange={handleChange}
      />
 
 
@@ -34,6 +34,7 @@ add item
 </button>
 
 </form>
+{item}
       </div>
     
     )
